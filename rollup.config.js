@@ -33,7 +33,7 @@ export default {
             }),
 
             peerDepsExternal(),
-            resolve(),
+            resolve({extensions: ['.js', '.jsx', '.tsx']}) ,
             terser(),
             commonjs()
         ]
