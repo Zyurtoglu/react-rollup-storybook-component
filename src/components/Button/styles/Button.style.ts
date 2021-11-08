@@ -3,9 +3,12 @@ import shape from './shape';
 import styled from 'styled-components';
 
 
+type ButtonProps = {
+  color: 'primary' | 'warning' | 'success' | 'error';
+  shape: 'rectangle' | 'circular';
+}
 
-
-export const StyledButton=styled.button`
+export const StyledButton=styled.button<ButtonProps>`
 
     font-size: 1.4rem;
     font-weight: 600;
@@ -23,7 +26,7 @@ export const StyledButton=styled.button`
 `
 
 export const LeftIcon = styled.span`
-  margin-inline-end: ${(props) => props}rem;
+  margin-inline-end: ${(props)=>props}rem;
 `;
 
 export const RightIcon = styled.span`

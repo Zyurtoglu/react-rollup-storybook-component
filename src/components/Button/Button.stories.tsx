@@ -1,8 +1,8 @@
 
 import React from 'react';
-import  Button  from './Button';
+import  Button , { ButtonProps } from './Button';
 import { FiSave} from "react-icons/fi";
-
+import { Story, Meta } from '@storybook/react';
 //const firstUpperModule = require("first_upper-module");
 
 export default {
@@ -33,11 +33,11 @@ export default {
       options: ['rectangle', 'circular'],
     },
   },
-};
+} as Meta;
 
 //const button_var_name="saVe";{firstUpperModule(button_var_name)}
-const Template = (args) =><Button {...args}>save </Button>;
 
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 
 
@@ -58,7 +58,7 @@ Circular.args = {
 export const WithIcon = Template.bind({});
   WithIcon.args = {
     leftIcon: <FiSave size={20} />,
-    // children:'FiSave'
+     children:'FiSave'
     
    
 };

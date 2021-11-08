@@ -3,12 +3,13 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import {terser} from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
 //import postcss from 'rollup-plugin-postcss';
 
 
 export default {
 
-        input: './src/index.js',
+        input: './src/index.ts',
         output: [
             {
                 file: 'dist/index.js',
@@ -33,9 +34,10 @@ export default {
             }),
 
             peerDepsExternal(),
-            resolve({extensions: ['.js', '.jsx', '.tsx']}) ,
+            resolve({extensions: ['.js', '.jsx', 'ts', '.tsx']}) ,
             terser(),
-            commonjs()
+            commonjs(),
+            typescript()
         ]
     
 };
